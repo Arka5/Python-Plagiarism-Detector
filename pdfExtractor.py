@@ -3,7 +3,7 @@ from PyPDF2 import PdfFileReader
 #
 # Getting Metadata from a PDF using PyPDF2
 #
-
+"""
 def get_info(path, mode):
     with open(path, 'rb') as f:
         pdf = PdfFileReader(f)
@@ -18,13 +18,13 @@ def get_info(path, mode):
             return number_of_pages
         if mode == 'info':
             return info
-
+"""
 
 #
 # Extracting text from a PDF
 #
 
-def text_extractor(path):
+def textExtract(path):
     try:
         with open(path, 'rb') as f:
             try:
@@ -57,4 +57,4 @@ def text_extractor(path):
 # DEBUG-PURPOSE
 if __name__ == '__main__':
     path = 'abc.pdf'
-    text_extractor(path)
+    textExtract(path)

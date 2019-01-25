@@ -2,47 +2,24 @@
 # This module can extract text from a .txt file
 #
 
-from docAngleCalc import returnAngle
-
-
-def textProcess(location1, location2):
+def textExtract(location):
     try:
-        file1 = open(location1, "r")
+        file = open(location, "r")
         try:
-            file2 = open(location2, "r")
+            text = file.read()
             try:
-                text1 = file1.read()
+                file.close()
                 try:
-                    text2 = file2.read()
-                    try:
-                        result = returnAngle(text1, text2)
-                        try:
-                            file1.close()
-                            try:
-                                file2.close()
-                                try:
-                                    return result
-                                except:
-                                    print(
-                                        "Error while returning result! [Error issued from textExtractor module]")
-                            except:
-                                print(
-                                    "Error while closing file 2! [Error issued from textExtractor module]")
-                        except:
-                            print(
-                                "Error while closing file 1! [Error issued from textExtractor module]")
-                    except:
-                        print(
-                            "Error from docAngleCalc module! [Error issued from textExtractor module]")
+                    return text
                 except:
                     print(
-                        "File 2 could not be read! [Error issued from textExtractor module]")
+                        "Error while returning result! [Error issued from textExtractor module]")
             except:
                 print(
-                    "File 1 could not be read! [Error issued from textExtractor module]")
+                    "Error while closing file! [Error issued from textExtractor module]")
         except:
             print(
-                "File 2 could not be opened! [Error issued from textExtractor module]")
+                "File could not be read! [Error issued from textExtractor module]")
     except:
         print(
-            "File 1 could not be opened! [Error issued from textExtractor module]")
+            "File could not be opened! [Error issued from textExtractor module]")
